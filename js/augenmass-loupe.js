@@ -145,7 +145,7 @@ function showFadingLoupe(x, y) {
     showLoupe(x, y);
     // Stay a couple of seconds, then fade away.
     loupe_fading_timer = setTimeout(function() {
-	loupe_canvas.style.transition = "top 0.3s, opacity 5s";
+	loupe_canvas.style.transition = "top 0.3s, opacity 1s";
 	loupe_canvas.style.opacity = 0;
-    }, 8000);
+    }, 1000);
 }
