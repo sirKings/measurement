@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signin</title>
+	<script type="text/javascript">
+		var signinbutton = document.getElementById("signin");
+		signinbutton.addEventListener("click", function (){
+			console.log(form)
+		})
+
+		 function signin(email, password) {
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+            });
+        }
+	</script>
+</head>
+<body>
+<h1>Please Signin</h1>
+<form>
+	<label for='email'>Email</label>
+	<input type="text" name="email">
+	<label for = 'password'>Password</label>
+	<input type="password" name="password">
+	<button id='signin'>Signin</button>
+</form>
+</body>
+
+</html>

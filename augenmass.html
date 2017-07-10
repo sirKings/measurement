@@ -56,6 +56,8 @@
   <body style="font-family: sans-serif;">
        <div class='info'>
       <h3>User ID: <input type="text" id="userId"></h3> 
+      <a href="signin.html"><button id= 'signin'>Signin</button> </a>
+      <a href="signup.html"><button id= 'signup'>Signup</button></a>
 <div id="container">
 <table>
   <head>
@@ -66,7 +68,6 @@
       <td>Value</td>
     </tr>
   </head>
-  <body>
     <tr>   
     <td class="parameter" id="shoulder">Shoulder</td>
     <td><input type="text" id="shoulderFront"></td>
@@ -194,7 +195,7 @@
     <td><input type="text" id="kneeValue"></td>    
     </tr>
 
-  </body>
+  
 </table>
 </div>
 <button id="generate">Generate</button> 
@@ -218,5 +219,30 @@
  
     <script>augenmass_init();</script>
     <script type="text/javascript" src='main.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+        <script>
+  // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDlN-RFjSBq4jBipkkyDYtF2AMuu8Kz1TY",
+            authDomain: "ladrope-9e888.firebaseapp.com",
+            databaseURL: "https://ladrope-9e888.firebaseio.com",
+            projectId: "ladrope-9e888",
+            storageBucket: "ladrope-9e888.appspot.com",
+            messagingSenderId: "205152875857"
+        };
+        firebase.initializeApp(config);
+
+
+        function signup(email, password) {
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+                // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+            });
+        }
+
+       
+    </script>
   </body>
 </html>
