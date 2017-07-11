@@ -182,6 +182,7 @@ function valueCalc(a , b){
 }
 
 function submit() {
+  var admin = document.getElementById('admin')
   var userId = document.getElementById('userId').value;
   firebase.database().ref('users/' + userId + '/size').update({
     shoulder: document.querySelector("#shoulderValue").value,
@@ -200,6 +201,7 @@ function submit() {
     wrist: document.querySelector("#wristValue").value,
     bicep: document.querySelector("#bicepValue").value,
     sleeve: document.querySelector("#sleeveValue").value,
+    author: admin.innerHTML
 
   });
  	console.log(document.querySelector("#shoulderValue").value)

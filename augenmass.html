@@ -63,7 +63,6 @@
       <input type="password" name="password" id='password'><br>
       <span>Admin: <span id='admin'>None</span></span><br>
       <button onClick='signin()'>Signin</button>
-      <button onClick= 'signup()'>Signup</button>
       <button onClick= 'signout()'>SignOut</button>
 <div id="container">
 <table>
@@ -240,19 +239,6 @@
         };
         firebase.initializeApp(config);
 
-
-        function signup(email, password) {
-            var email = document.getElementById('email').value
-            var password = document.getElementById('password').value
-            var admin = document.getElementById('admin')
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-                // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-             admin.innerHTML = errorMessage
-            });
-        }
 
         function signin() {
             var email = document.getElementById('email').value
