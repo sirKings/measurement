@@ -97,7 +97,7 @@ refresh.addEventListener("click", function(){
 //change the value of all the input boxes back to empty. 
 document.querySelector("#shoulderFront").value = "";
 document.querySelector("#shoulderSide").value = "";
-document.querySelector("#shoulderValue").value = shoulderFront;
+document.querySelector("#shoulderValue").value = "";
 
 document.querySelector("#sleeveFront").value = "";
 document.querySelector("#sleeveSide").value = "";
@@ -179,5 +179,29 @@ document.querySelector("#kneeValue").value = "";
 function valueCalc(a , b){
 	var val = (Math.sqrt(((a/2 * a/2) + (b/2 * b/2)) / 2)) * 6.284;
 	return val;
+}
+
+function submit() {
+  var userId = document.getElementById('userId').value;
+  firebase.database().ref('users/' + userId + '/size').update({
+    shoulder: document.querySelector("#shoulderValue").value,
+    knee: document.querySelector("#kneeValue").value,
+    thigh: document.querySelector("#thighValue").value,
+    crotch: document.querySelector("#crotchValue").value,
+    trouserIn: document.querySelector("#trouserInseamValue").value,
+    trouserOut: document.querySelector("#trouserOutseamValue").value,
+    waist: document.querySelector("#trouserWaistValue").value,
+    halfback: document.querySelector("#halfBackValue").value,
+    fullback: document.querySelector("#fullBackValue").value,
+    halfShoulder: document.querySelector("#halfShoulderValue").value,
+    chest: document.querySelector("#chestValue").value,
+    hips: document.querySelector("#hipsValue").value,
+    belly: document.querySelector("#stomachValue").value,
+    wrist: document.querySelector("#wristValue").value,
+    bicep: document.querySelector("#bicepValue").value,
+    sleeve: document.querySelector("#sleeveValue").value,
+
+  });
+ 	console.log(document.querySelector("#shoulderValue").value)
 }
 
